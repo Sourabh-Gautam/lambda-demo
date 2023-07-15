@@ -1,9 +1,15 @@
-import axios from "axios"
+import axios from "axios";
 
-export default class LoginService {
+class LoginService {
+  url = "https://n386mqfftc.execute-api.ap-south-1.amazonaws.com/dev/employee";
 
-    setSubscriber() {
-        return axios.get("https://jsonplaceholder.typicode.com/posts")
-    }
+  setSubscriber() {
+    const headers = {
+      "Content-Type": "application/json",
+    };
 
+    return axios.get(this.url, { headers });
+  }
 }
+
+export default LoginService;
